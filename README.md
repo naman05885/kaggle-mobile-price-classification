@@ -71,15 +71,19 @@ The following results were obtained on the held-out test set of 400 instances. P
 | Gaussian Naive Bayes | 0.8100 | 0.9506 | 0.8113 | 0.8100 | 0.8105 | 0.7468 |
 | Support Vector Machine | 0.8950 | 0.9834 | 0.8969 | 0.8950 | 0.8956 | 0.8602 |
 
-### Result Interpretation
+### Model Observations
 
-- Logistic Regression achieved the best overall performance, with accuracy and weighted F1 of **0.9650**.
-- Logistic Regression achieved the highest MCC, **0.9534**.
-- SVM was the second-best model.
-- KNN produced the lowest performance in this experiment.
-- The neighbouring price categories are comparatively more difficult to distinguish than the extreme categories.
+| ML Model | Observation about model performance |
+|---|---|
+| Logistic Regression | Best overall model. It achieved the highest accuracy, AUC, F1 score, and MCC, showing strong separation and balanced performance across all four classes. |
+| Decision Tree | Produced moderate performance. It was interpretable, but its accuracy and AUC were lower than the linear and margin-based models. |
+| KNN | Produced the weakest result on this split. Its 0.5000 accuracy and 0.5054 F1 score indicate difficulty separating the price ranges using local distance relationships. |
+| Naive Bayes | Performed below the tree and SVM models but maintained useful class separation, reflected by its 0.9506 AUC. |
+| Support Vector Machine | Second-best model. It achieved strong results across all metrics and clearly outperformed Decision Tree, KNN, and Naive Bayes. |
 
-Therefore, Logistic Regression was selected as the best-performing model for this dataset and experimental setup.
+### Overall Winner
+
+**Logistic Regression** was the overall winner. It achieved the highest weighted F1 score of **0.9650** and the highest MCC of **0.9534**, providing the strongest balance of predictive accuracy and multiclass reliability for this dataset.
 
 ## Streamlit Application
 
