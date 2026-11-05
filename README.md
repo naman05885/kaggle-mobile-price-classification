@@ -8,6 +8,8 @@ An end-to-end multi-class classification project for predicting the price range 
 - **Live Streamlit application:** https://naman-mobile-price-classification-x.streamlit.app/
 - **Kaggle dataset:** https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification
 
+**NOTE:** For demonstration, the application automatically loads the preloaded test_data.csv file when no new file has been uploaded. This allows the evaluator to view the model output immediately after opening the application. If a user uploads another labelled test CSV file containing the required features and the price_range target column, the application uses the newly uploaded file instead and displays updated predictions and evaluation results for the selected model.
+
 ## Problem Statement
 
 The objective is to classify a mobile phone into one of four price-range categories using its hardware and technical specifications. This is a supervised multi-class classification problem. The target is not the exact price; `price_range` indicates the category.
@@ -97,6 +99,9 @@ The deployed application allows the user to:
 6. View the classification report.
 
 The uploaded CSV must contain the 20 input features and the `price_range` target column. The application loads saved models and evaluates the uploaded data; it does not retrain the models during upload.
+Default and Uploaded Test Data
+
+**NOTE:** For demonstration, the application automatically loads the preloaded `test_data.csv` file when no new file has been uploaded. This allows the evaluator to view the model output immediately after opening the application. If a user uploads another labelled test CSV file containing the required features and the `price_range` target column, the application uses the newly uploaded file instead and displays updated predictions and evaluation results for the selected model.
 
 **Live application:** https://naman-mobile-price-classification-x.streamlit.app/
 
