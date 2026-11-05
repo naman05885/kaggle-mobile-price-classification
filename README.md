@@ -2,15 +2,7 @@
 
 An end-to-end multi-class classification project for predicting the price range of a mobile phone from its technical specifications. This project was completed for the M.Tech AIML Machine Learning Assignment 2.
 
-## Project Links
-
-- **GitHub repository:** https://github.com/naman05885/kaggle-mobile-price-classification
-- **Live Streamlit application:** https://naman-mobile-price-classification-x.streamlit.app/
-- **Kaggle dataset:** https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification
-
-**NOTE:** For demonstration, the application automatically loads the preloaded test_data.csv file when no new file has been uploaded. This allows the evaluator to view the model output immediately after opening the application. If a user uploads another labelled test CSV file containing the required features and the price_range target column, the application uses the newly uploaded file instead and displays updated predictions and evaluation results for the selected model.
-
-## Problem Statement
+## a. Problem Statement
 
 The objective is to classify a mobile phone into one of four price-range categories using its hardware and technical specifications. This is a supervised multi-class classification problem. The target is not the exact price; `price_range` indicates the category.
 
@@ -21,7 +13,7 @@ The objective is to classify a mobile phone into one of four price-range categor
 | 2 | High Cost |
 | 3 | Very High Cost |
 
-## Dataset Description
+## b. Dataset Description
 
 The project uses the public Kaggle **Mobile Price Classification** dataset.
 
@@ -38,7 +30,19 @@ The project uses the public Kaggle **Mobile Price Classification** dataset.
 
 The dataset satisfies the assignment minimum requirements of at least 12 input features and at least 500 instances.
 
-## Data Preparation
+## c. GitHub Repository Link
+
+**GitHub repository:** https://github.com/naman05885/kaggle-mobile-price-classification
+
+**Kaggle dataset source:** https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification
+
+**Live Streamlit application:** https://naman-mobile-price-classification-x.streamlit.app/
+
+**NOTE:** For demonstration, the application automatically loads the preloaded `test_data.csv` file when no new file has been uploaded. This allows the evaluator to view the model output immediately after opening the application. If a user uploads another labelled test CSV file containing the required features and the `price_range` target column, the application uses the newly uploaded file instead and displays updated predictions and evaluation results for the selected model.
+
+## d. Models Used and Evaluation Results
+
+### Data Preparation
 
 1. The target column `price_range` was separated from the input features.
 2. The data was divided into training and testing sets using an 80:20 stratified split.
@@ -47,7 +51,7 @@ The dataset satisfies the assignment minimum requirements of at least 12 input f
 5. Numerical features were standardized using `StandardScaler` where required.
 6. A fixed random seed of `42` was used for reproducibility.
 
-## Machine Learning Models
+### Machine Learning Models
 
 The five classification algorithms required by the assignment were implemented and evaluated on the same test set:
 
@@ -57,11 +61,11 @@ The five classification algorithms required by the assignment were implemented a
 4. Gaussian Naive Bayes
 5. Support Vector Machine
 
-## Evaluation Metrics
+### Evaluation Metrics
 
 Each model was evaluated using Accuracy, one-vs-Rest ROC-AUC, Precision, Recall, F1 Score, and Matthews Correlation Coefficient (MCC). Confusion matrices and classification reports were also generated.
 
-## Model Comparison Results
+### Model Comparison Results
 
 The following results were obtained on the held-out test set of 400 instances. Precision, recall, and F1 are weighted averages.
 
@@ -87,7 +91,7 @@ The following results were obtained on the held-out test set of 400 instances. P
 
 **Logistic Regression** was the overall winner. It achieved the highest weighted F1 score of **0.9650** and the highest MCC of **0.9534**, providing the strongest balance of predictive accuracy and multiclass reliability for this dataset.
 
-## Streamlit Application
+## e. Streamlit Application and Deployment
 
 The deployed application allows the user to:
 
@@ -99,9 +103,10 @@ The deployed application allows the user to:
 6. View the classification report.
 
 The uploaded CSV must contain the 20 input features and the `price_range` target column. The application loads saved models and evaluates the uploaded data; it does not retrain the models during upload.
-Default and Uploaded Test Data
 
-**NOTE:** For demonstration, the application automatically loads the preloaded `test_data.csv` file when no new file has been uploaded. This allows the evaluator to view the model output immediately after opening the application. If a user uploads another labelled test CSV file containing the required features and the `price_range` target column, the application uses the newly uploaded file instead and displays updated predictions and evaluation results for the selected model.
+### Default and Uploaded Test Data
+
+For demonstration, the application automatically loads the preloaded `test_data.csv` file when no new file has been uploaded. This allows the evaluator to view the model output immediately after opening the application. If a user uploads another labelled test CSV file containing the required features and the `price_range` target column, the application uses the newly uploaded file instead and displays updated predictions and evaluation results for the selected model.
 
 **Live application:** https://naman-mobile-price-classification-x.streamlit.app/
 
